@@ -2,7 +2,7 @@ CC 	=	g++
 CFLAGS 	= 	-W -Wall -Werror
 NAME 	=	meatGrinder
 RM 	=	rm -f
-SRC	=	src.cpp
+SRC	=	src/main.cpp
 OBJ	=	$(SRC:%.cpp=%.o)
 
 $(NAME):	$(OBJ)
