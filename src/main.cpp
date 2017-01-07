@@ -19,7 +19,7 @@ int main()
 
   outText = api->GetUTF8Text();
   printf("OCR output:\n%s", outText);
-  printf("Most Used Letter:\n%c", getMostUsedLetter(outText) );
+  printf("Most Used Letter: %c \n", getMostUsedLetter(outText) );
 
   api->End();
   delete [] outText;

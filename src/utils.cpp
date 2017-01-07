@@ -6,6 +6,7 @@
 using namespace std;
 
 typedef   map<char, unsigned> Map;
+typedef Map::iterator iter;
 
 Map     makeMap(char *letters){
 
@@ -32,6 +33,17 @@ char    getMostUsedLetter(char *letters){
 
   Map   dict;
   dict = makeMap(letters);
+  iter it = dict.begin();
+  iter end = dict.end();
 
-  return ('e');
+  int max_value = it->second;
+  char str = it->first;
+  for( ; it != end; ++it) {
+      if(it->second > max_value) {
+          max_value = it->second;
+          str = it->first;
+      }
+  }
+
+  return (str);
 };
