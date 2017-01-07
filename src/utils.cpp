@@ -6,15 +6,15 @@
 using namespace std;
 
 typedef   map<char, unsigned> Map;
-typedef Map::iterator iter;
+typedef   Map::iterator iter;
 
-Map     makeMap(char *letters){
+Map       makeMap(char *letters){
 
-  Map   dict;
+  Map     dict;
   if (letters == NULL ) return (dict);
 
-  int   size = 0;
-  char  c = letters[0];
+  int     size = 0;
+  char    c = letters[0];
 
   while ( c != '\0' ){
     dict[c] = dict[c] + 1;
@@ -27,11 +27,12 @@ Map     makeMap(char *letters){
   return (dict);
 }
 
-char    getMostUsedLetter(char *letters){
+char      getMostUsedLetter(char *letters){
 
   if (letters == NULL ) return '\0';
 
-  Map   dict;
+  Map     dict;
+  
   dict = makeMap(letters);
   iter it = dict.begin();
   iter end = dict.end();
