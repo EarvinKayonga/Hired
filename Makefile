@@ -1,12 +1,12 @@
 CC 	=	g++
-CFLAGS 	= 	-W -Wall -Werror
+CFLAGS 	= 	-W -Wall -Werror -llept -ltesseract
 NAME 	=	meatGrinder
 RM 	=	rm -f
 SRC	=	src/main.cpp
 OBJ	=	$(SRC:%.cpp=%.o)
 
 $(NAME):	$(OBJ)
-		$(CC) $(OBJ) -o $(NAME)
+		$(CC) $(OBJ) -o $(NAME) $(CFLAGS)
 
 all:		$(NAME)
 
