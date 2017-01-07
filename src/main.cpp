@@ -1,8 +1,10 @@
 #include <tesseract/baseapi.h>
 #include <leptonica/allheaders.h>
+#include	<stdlib.h>
 
+#include "utils.h"
 
-int main() 
+int main()
 {
   char *outText;
 
@@ -17,11 +19,12 @@ int main()
 
   outText = api->GetUTF8Text();
   printf("OCR output:\n%s", outText);
+  printf("Most Used Letter:\n%c", getMostUsedLetter(outText) );
 
   api->End();
   delete [] outText;
   pixDestroy(&image);
 
   return 0;
-  
+
 }
