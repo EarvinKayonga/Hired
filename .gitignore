@@ -132,3 +132,5 @@ modules.xml
 0Recherche
 
 .idea/
+CMakeLists.txt
+cmake-build-debug/
