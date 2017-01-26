@@ -1,50 +1,34 @@
-#include	<stdlib.h>
-#include  <map>
-
 #include  "utils.h"
 
 using namespace std;
 
-typedef   map<char, unsigned> Map;
-typedef   Map::iterator iter;
 
-Map       makeMap(char *letters){
+char      *translate(char *letters){
 
-  Map     dict;
-  if (letters == NULL ) return (dict);
+    char    c;
+    int     size = 0;
+    char    res[myStrlen(letters)];
 
-  int     size = 0;
-  char    c = letters[0];
+    if (letters == NULL ) return (NULL);
+        char mostUsed = 'z';
 
-  while ( c != '\0' ){
-    dict[c] = dict[c] + 1;
-    size++;
-    c = letters[size];
-  }
 
-  dict.erase(' ');
+    while ( (c = letters[size]) != '\0' ) {
 
-  return (dict);
+        int     shift = mostUsed - 'a';
+
+        if (isMaj(c))
+            res[size] =  toupper(getTranslate(shift, tolower(c), 'a'));
+
+        if (isMin(c))
+            res[size] = getTranslate(shift, c, 'a');
+
+
+        if (c == ' ')
+            res[size] = ' ';
+
+        size++;
+    }
+
+    return (res);
 }
-
-char      getMostUsedLetter(char *letters){
-
-  if (letters == NULL ) return '\0';
-
-  Map     dict;
-  
-  dict = makeMap(letters);
-  iter it = dict.begin();
-  iter end = dict.end();
-
-  int max_value = it->second;
-  char str = it->first;
-  for( ; it != end; ++it) {
-      if(it->second > max_value) {
-          max_value = it->second;
-          str = it->first;
-      }
-  }
-
-  return (str);
-};
