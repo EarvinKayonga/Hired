@@ -5,7 +5,7 @@ const express = require("express"),
       Tesseract = require('tesseract.js'),
       fs = require('fs')
 
-const port = process.env.port || 4000,
+const port = process.env.PORT || 4000,
       responseTime = require('response-time'),
       field = 'userPhoto',
       folder = './uploads',
