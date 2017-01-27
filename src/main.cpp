@@ -1,17 +1,18 @@
-#include <tesseract/baseapi.h>
-#include <leptonica/allheaders.h>
+//#include <tesseract/baseapi.h>
+//#include <leptonica/allheaders.h>
 
 #include "utils.h"
 
-/*#include  <stdio.h>
+#include  <stdio.h>
 int     main(){
   char *outText;
   outText = "Rky skorrkaxky uvvuxzatozky bokttktz g buay yax Noxkj";
   printf("OCR output:\n%s\n", outText);
   printf("Most Used Letter: %c \n", getMostUsedLetter(outText) );
   printf("Traduction: %s \n ", translate(outText) );
-}*/
+}
 
+/*
 int main()
 {
   char *outText;
@@ -35,3 +36,4 @@ int main()
 
   return (0);
 }
+*/
