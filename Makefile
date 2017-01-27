@@ -18,3 +18,6 @@ fclean:			clean
 		$(RM) $(NAME)
 
 re:		fclean all
+
+heroku:
+		git subtree push --prefix js heroku master
